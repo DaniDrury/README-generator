@@ -17,8 +17,56 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(data) {
+    const {
+        title,
+        description,
+        installation,
+        usage,
+        credits,
+        license,
+        contribute,
+        tests,
+        github,
+        email
+    } = data;
 
+    const READMEcontent = `
+    #${title}
+
+    ## Description
+    ${description}
+    
+    ## Table of Contents    
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Credits](#credits)
+    - [License](#license)
+    - [Contribute](#how to contribute)
+    - [Tests](#tests)
+    
+    ## Installation
+    ${installation}
+
+    ## Usage
+    ${usage}
+    
+    ## Credits
+    ${credits}
+    
+    ## License
+    ${license}
+    
+    ## How to Contribute
+    ${contribute}
+    
+    ## Tests
+    ${tests}    
+    `
+
+    fs.writeFile('README.md', READMEcontent, (err) =>
+        err ? console.log(err) : console.log('Successfully created README.md!')
+    );
 }
 
 // TODO: Create a function to initialize app
@@ -28,40 +76,56 @@ function init() {
             {
                 type: 'input',
                 name: 'title',
-                message: questions[0],
+                message: questions[0]
             },
             {
                 type: 'input',
-                name: 'location',
-                message: 'Where are you from?',
+                name: 'description',
+                message: questions[1]
             },
             {
                 type: 'input',
-                name: 'hobby',
-                message: 'What is your favorite hobby?',
+                name: 'installation',
+                message: questions[2]
             },
             {
                 type: 'input',
-                name: 'food',
-                message: 'What is your favorite food?',
+                name: 'usage',
+                message: questions[3]
+            },
+            {
+                type: 'input',
+                name: 'credits',
+                message: questions[4]
+            },
+            {
+                type: 'input',
+                name: 'license',
+                message: questions[5]
+            },
+            {
+                type: 'input',
+                name: 'contribute',
+                message: questions[6]
+            },
+            {
+                type: 'input',
+                name: 'tests',
+                message: questions[6]
             },
             {
                 type: 'input',
                 name: 'github',
-                message: 'Enter your GitHub Username',
+                message: questions[6]
             },
             {
                 type: 'input',
-                name: 'linkedin',
-                message: 'Enter your LinkedIn URL.',
-            },
+                name: 'email',
+                message: questions[7]
+            }
         ])
         .then((answers) => {
-            const htmlPageContent = generateHTML(answers);
-
-            fs.writeFile('index.html', htmlPageContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created index.html!')
-            );
+            writeToFile(answers);
         });
 }
 
