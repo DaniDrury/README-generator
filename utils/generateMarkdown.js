@@ -1,51 +1,43 @@
-const badges = [
+const licenses = [
   {
-    name: 'mit',
-    choice: 'MIT',
+    name: 'MIT License',
     badge: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    about: 'A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.'
+    link: 'https://opensource.org/licenses/MIT'
   },
   {
-    name: 'apache',
-    choice: 'Apache License 2.0',
+    name: 'Apache License 2.0',
     badge: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-    about: 'A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.'
+    link: 'https://opensource.org/licenses/Apache-2.0'
   },
   {
-    name: 'gpl3',
-    choice: 'GNU GPL v3.0',
+    name: 'GNU GPL v3.0',
     badge: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    about: 'Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.'
+    link: 'https://www.gnu.org/licenses/gpl-3.0'
   },
   {
-    name: 'boost',
-    choice: 'Boost Software License 1.0',
+    name: 'Boost Software License 1.0',
     badge: '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
-    about: 'A simple permissive license only requiring preservation of copyright and license notices for source (and not binary) distribution. Licensed works, modifications, and larger works may be distributed under different terms and without source code.'
-  },
+    link: 'https://www.boost.org/LICENSE_1_0.txt'
+    },
   {
-    name: 'agpl3',
-    choice: 'GNU AGPL v3.0',
+    name: 'GNU AGPL v3.0',
     badge: '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)',
-    about: 'Permissions of this strongest copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. When a modified version is used to provide a service over a network, the complete source code of the modified version must be made available.'
+    link: 'https://www.gnu.org/licenses/agpl-3.0'
   },
   {
-    name: 'lgpl',
-    choice: 'GNU LGPL',
+    name: 'GNU LGPL',
     badge: '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)',
-    about: 'Permissions of this copyleft license are conditioned on making available complete source code of licensed works and modifications under the same license or the GNU GPLv3. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work through interfaces provided by the licensed work may be distributed under different terms and without source code for the larger work.'
+    link: 'https://www.gnu.org/licenses/lgpl-3.0'
   },
   {
-    name: 'mozilla',
-    choice: 'Mozilla Public License 2.0',
+    name: 'Mozilla Public License 2.0',
     badge: '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)',
-    about: 'Permissions of this weak copyleft license are conditioned on making available source code of licensed files and modifications of those files under the same license (or in certain cases, one of the GNU licenses). Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work may be distributed under different terms and without source code for files added in the larger work.'
+    link: 'https://opensource.org/licenses/MPL-2.0'
   },
   {
-    name: 'unlicense',
-    choice: 'The Unlicense',
+    name: 'The Unlicense',
     badge: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
-    about: 'A license with no conditions whatsoever which dedicates works to the public domain. Unlicensed works, modifications, and larger works may be distributed under different terms and without source code.'
+    link: 'http://unlicense.org/'
   }
 ]
 
@@ -55,9 +47,9 @@ function renderLicenseBadge(license) {
   if (license === 'No License') {
     return '';
   } else {
-    for (const badge of badges) {
-      if (license === badge.choice) {
-        return badge.badge;
+    for (const choice of licenses) {
+      if (license === choice.name) {
+        return choice.badge;
       }
     }
   };
@@ -66,7 +58,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  // N/A -- the way I created the badges makes this function unnecessary
+// I found this function to be unnecessary - Please see renderLicenseSection function
 }
 
 // TODO: Create a function that returns the license section of README
@@ -75,9 +67,9 @@ function renderLicenseSection(license) {
   if (license === 'No License') {
     return '';
   } else {
-    for (const badge of badges) {
-      if (license === badge.choice) {
-        return `This project is licensed under the ${badge.badge}.`;
+    for (const choice of licenses) {
+      if (license === choice.name) {
+        return `This project is licensed under the [${choice.name}](${choice.link}).`;
       }
     }
   };
