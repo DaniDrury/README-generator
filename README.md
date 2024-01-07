@@ -4,6 +4,8 @@
 ## Description
 Command line programs that prompts the user for information about their software project then uses that information to generate a professional README file.
 
+[Submission Video](https://watch.screencastify.com/v/XU48ysV4M9C7aQXKFYr9)
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
