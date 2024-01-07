@@ -42,8 +42,9 @@ ${description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Contribute](#contribute)
+- [Contribute](#contributing)
 - [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 ${installation}
@@ -57,11 +58,16 @@ ${credits}
 ## License
 ${license}
 
-## Contribute
+## Contributing
 ${contribute}
 
 ## Tests
-${tests}`
+${tests}
+
+## Questions
+To contact me with any questions regarding this project:
+1. [GitHub Profile](https://github.com/${github})
+2. Email me at: <${email}>`
 
     fs.writeFile('README.md', READMEcontent, (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
