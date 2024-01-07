@@ -1,7 +1,8 @@
-# README Generator
+# testy
+[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
 ## Description
-Command line program that prompts user for information about their project, then uses that information to generate a professional README file.
+test
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,22 +14,22 @@ Command line program that prompts user for information about their project, then
 - [Questions](#questions)
 
 ## Installation
-Ensure you have node.js installed on your system. Download the index.js file. Using your command line, navigate to the directory in which the index.js file resides. Install the inquirer version8.2.4 node module using the following command:  npm i inquirer@8.2.4
+test
 
 ## Usage
-Using the command line opened to the home directory of index.js, type "node index.js" to run the file.
+test
 
 ## Credits
-None
+Sarun
 
 ## License
-MIT
+This project is licensed under the [![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt).
 
 ## Contributing
-Fork the GitHub Repo, make your changes, open a pull request for my review of your contributions. Thanks!
+easily
 
 ## Tests
-None
+so many tests
 
 ## Questions
 To contact me with any questions regarding this project:

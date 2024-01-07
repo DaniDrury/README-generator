@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -18,58 +19,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-    const {
-        title,
-        description,
-        installation,
-        usage,
-        credits,
-        license,
-        contribute,
-        tests,
-        github,
-        email
-    } = data;
-
-    const READMEcontent = 
-`# ${title}
-
-## Description
-${description}
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Contribute](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-
-## Installation
-${installation}
-
-## Usage
-${usage}
-
-## Credits
-${credits}
-
-## License
-${license}
-
-## Contributing
-${contribute}
-
-## Tests
-${tests}
-
-## Questions
-To contact me with any questions regarding this project:
-1. [GitHub Profile](https://github.com/${github})
-2. Email me at: <${email}>`
-
-    fs.writeFile('README.md', READMEcontent, (err) =>
+    fs.writeFile('README.md', generateMarkdown(data), (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
     );
 }
@@ -110,15 +60,14 @@ function init() {
                 choices: [
                     'MIT',
                     'Apache License 2.0',
-                    'GNU General Public License v3.0',
-                    'BSD',
+                    'GNU GPL v3.0',
                     'Boost Software License 1.0',
-                    'Creative Commons Zero v1.0 Universal',
-                    'Eclipse Public License 2.0',
-                    'GNU Affero General Public License v3.0',
+                    'GNU AGPL v3.0',
+                    'GNU LGPL',
                     'Mozilla Public License 2.0',
+                    'The Unlicense',
                     'No License'],
-                default: 'MIT'
+                default: 'No License'
             },
             {
                 type: 'input',
