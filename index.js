@@ -31,38 +31,37 @@ function writeToFile(data) {
         email
     } = data;
 
-    const READMEcontent = `
-    #${title}
+    const READMEcontent = 
+`# ${title}
 
-    ## Description
-    ${description}
-    
-    ## Table of Contents    
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
-    - [Contribute](#how to contribute)
-    - [Tests](#tests)
-    
-    ## Installation
-    ${installation}
+## Description
+${description}
 
-    ## Usage
-    ${usage}
-    
-    ## Credits
-    ${credits}
-    
-    ## License
-    ${license}
-    
-    ## How to Contribute
-    ${contribute}
-    
-    ## Tests
-    ${tests}    
-    `
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Contribute](#contribute)
+- [Tests](#tests)
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## Credits
+${credits}
+
+## License
+${license}
+
+## Contribute
+${contribute}
+
+## Tests
+${tests}`
 
     fs.writeFile('README.md', READMEcontent, (err) =>
         err ? console.log(err) : console.log('Successfully created README.md!')
@@ -111,17 +110,17 @@ function init() {
             {
                 type: 'input',
                 name: 'tests',
-                message: questions[6]
+                message: questions[7]
             },
             {
                 type: 'input',
                 name: 'github',
-                message: questions[6]
+                message: questions[8]
             },
             {
                 type: 'input',
                 name: 'email',
-                message: questions[7]
+                message: questions[9]
             }
         ])
         .then((answers) => {
