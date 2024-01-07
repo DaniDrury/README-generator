@@ -104,9 +104,21 @@ function init() {
                 message: questions[4]
             },
             {
-                type: 'input',
+                type: 'list',
                 name: 'license',
-                message: questions[5]
+                message: questions[5],
+                choices: [
+                    'MIT',
+                    'Apache License 2.0',
+                    'GNU General Public License v3.0',
+                    'BSD',
+                    'Boost Software License 1.0',
+                    'Creative Commons Zero v1.0 Universal',
+                    'Eclipse Public License 2.0',
+                    'GNU Affero General Public License v3.0',
+                    'Mozilla Public License 2.0',
+                    'No License'],
+                default: 'MIT'
             },
             {
                 type: 'input',
